@@ -1,18 +1,9 @@
-from django.contrib.auth import get_user_model
-
 import graphql_jwt
 import graphene
-from graphene_django import DjangoObjectType
+from django.contrib.auth import get_user_model
 
-
-class UserType(DjangoObjectType):
-    class Meta:
-        model = get_user_model()
-
-
-class CreateUserInput(graphene.InputObjectType):
-    username = graphene.String(required=True)
-    email = graphene.String(required=True)
+from users.inputs import CreateUserInput
+from users.types import UserType
 
 
 class CreateUser(graphene.Mutation):

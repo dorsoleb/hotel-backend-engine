@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'graphene_django',
     
     #My app
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,6 @@ AUTHENTICATION_BACKENDS = [
     'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+
+AUTH_USER_MODEL = 'users.User'
